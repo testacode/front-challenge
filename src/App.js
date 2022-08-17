@@ -43,12 +43,12 @@ const App = () => {
 
   return (
     <div className="App">
-        <Routes>
-          <Route path="/" element={<Main isLoading={isLoading} data={formattedData} />} />
-          <Route path="/detail/:coin" element={<Detail />} />
-          <Route path="*" element={<Navigate to="/" replace />}
-          />
-        </Routes>
+      <Routes>
+        <Route path="/" element={<Main isLoading={isLoading} data={formattedData} />} />
+        <Route path="/detail/:coin" element={<Detail />} />
+        <Route path="*" element={<Navigate to="/" replace />}
+        />
+      </Routes>
     </div>
   );
 };

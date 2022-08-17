@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from 'react-router-dom';
 
 import "./Main.css";
@@ -18,7 +18,7 @@ const Main = ({ isLoading, data }) => {
     <div className="Main">
       {isLoading && (<div className="loading">loading...</div>)}
       {!isLoading && (
-        <table>
+        <table data={data}>
           <thead>
             <tr>
               <th>Name</th>
@@ -30,7 +30,6 @@ const Main = ({ isLoading, data }) => {
           </thead>
           <tbody>
             {data.map((data) => {
-              console.log({ data })
               return (
                 <tr key={data.key}>
                   <td>Name: {data.name}</td>
