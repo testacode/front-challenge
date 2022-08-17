@@ -28,14 +28,12 @@ const Detail = () => {
       .finally(() => {
         setIsLoading(false);
       });
-  }, []);
+  }, [coin]);
 
   if (isLoading) return <div>loading...</div>;
 
-  let formattedData = [];
-
-  Object.keys(detail).map((crypto) => {
-    formattedData.push({
+  let formattedData = Object.keys(detail).map((crypto) => {
+    return ({
       price: detail[crypto]["USD"]["PRICE"],
       name: detail[crypto]["USD"]["FROMSYMBOL"],
     });

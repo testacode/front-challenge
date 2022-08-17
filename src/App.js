@@ -31,10 +31,8 @@ const App = () => {
 
   if (isLoading) return <div>loading...</div>;
 
-  let formattedData = [];
-
-  Object.keys(cryptos).map((crypto) => {
-    formattedData.push({
+  let formattedData = Object.keys(cryptos).map((crypto) => {
+    return ({
       key: crypto,
       price: cryptos[crypto]["USD"]["PRICE"],
       market_cap: cryptos[crypto]["USD"].MKTCAP,
@@ -48,9 +46,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Main isLoading={isLoading} data={formattedData} />} />
         <Route path="/detail/:coin" element={<Detail />} />
-        <Route
-          path="*"
-          element={<Navigate to="/" replace />}
+        <Route path="*" element={<Navigate to="/" replace />}
         />
       </Routes>
     </>
