@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Routes, Route, Navigate } from 'react-router-dom';
 
+import "./App.css";
+
 import { Detail, Main } from './Pages';
 
 const URL = "https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,ETH,XRP,DOGE,BNB,LTC,ADA,BUSD,BCH,VET,DOT,EOS,SOL,SRM,USDT,BTT,TRX,FIL,LINK,MATIC,UNI,NEO,CHZ,ETC,THETA,XLM,BSV,LUNA,WIN,SXP&tsyms=USD";
@@ -29,8 +31,6 @@ const App = () => {
       });
   }, []);
 
-  if (isLoading) return <div>loading...</div>;
-
   let formattedData = Object.keys(cryptos).map((crypto) => {
     return ({
       key: crypto,
@@ -42,14 +42,14 @@ const App = () => {
   });
 
   return (
-    <>
-      <Routes>
-        <Route path="/" element={<Main isLoading={isLoading} data={formattedData} />} />
-        <Route path="/detail/:coin" element={<Detail />} />
-        <Route path="*" element={<Navigate to="/" replace />}
-        />
-      </Routes>
-    </>
+    <div className="App">
+        <Routes>
+          <Route path="/" element={<Main isLoading={isLoading} data={formattedData} />} />
+          <Route path="/detail/:coin" element={<Detail />} />
+          <Route path="*" element={<Navigate to="/" replace />}
+          />
+        </Routes>
+    </div>
   );
 };
 

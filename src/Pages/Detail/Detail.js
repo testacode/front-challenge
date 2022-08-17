@@ -30,8 +30,6 @@ const Detail = () => {
       });
   }, [coin]);
 
-  if (isLoading) return <div>loading...</div>;
-
   let formattedData = Object.keys(detail).map((crypto) => {
     return ({
       price: detail[crypto]["USD"]["PRICE"],
@@ -41,22 +39,27 @@ const Detail = () => {
 
   return (
     <div className="Detail">
-      <Link to="/">Regresar</Link>
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Price in USD</th>
-          </tr>
-        </thead>
+      {isLoading && (<div>loading detail...</div>)}
+      {!isLoading && (
+        <>
+          <Link to="/">Regresar</Link>
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Price in USD</th>
+              </tr>
+            </thead>
 
-        <tbody>
-          <tr>
-            <td>Name: {formattedData[0].name}</td>
-            <td>Price: {formattedData[0].price}</td>
-          </tr>
-        </tbody>
-      </table>
+            <tbody>
+              <tr>
+                <td>Name: {formattedData[0].name}</td>
+                <td>Price: {formattedData[0].price}</td>
+              </tr>
+            </tbody>
+          </table>
+        </>
+      )}
     </div>
   );
 
