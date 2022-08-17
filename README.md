@@ -1,68 +1,42 @@
 # Senior Frontend Developer Challenge
 
-### Take-Home Assignment
+## Detalles
 
-## Description
+### La Aplicación
 
-With this exercise, we will evaluate your ability to develop a simple frontend application that meets the requirements for an imaginary product we want to build.
+¡Estamos muy entusiasmados con Crypto! Nos gustaría tener un sitio para ver las 50 principales criptomonedas basadas en Market Cap. En la primera parte de este proyecto, nos gustaría ver una lista de los 50 mejores criptos, estas serán mostradas con los siguientes parámetros:
 
-Completing this should take you anywhere from a couple of hours to up to a day depending on your level of expertise, available time to focus, and level of detail you consider sufficient.
+* Name
+* Price
+* Market Cap
+* Circulating Supply (For example, Bitcoin Max supply is 21 Million Bitcoins, but the circulating supply is approx. 18 million)
 
-That said, if it is taking you more than a day, you are probably spending more effort than necessary in some details.
-We expect that you submit your final work within one week of receiving the assignment, but please let us know if this is too short notice for you.
+### El api que usamos es esta
 
-Please feel free to reach out and ask questions if you need any clarification.
+Ya tenemos las bases de esta app, la encontrarás acá, revisa el código y cuéntanos ¿Cómo lo ves? Si prefieres puedes usar el repositorio: [https://github.com/eva-tech/front-challenge](https://github.com/eva-tech/front-challenge)
 
-## Details
+### Pasos de la prueba
 
-### The Application
+Importante: No es un requerimiento seguir el orden de los pasos, optimice su tiempo de la mejor forma y desarrollelos como se sienta más cómodo.
 
-We are very enthusiastic about Crypto! We would like to have a site to view the top 50 Cryptos based on Market Cap. In the first part of this project, we would like to see a list of the 50 best cryptos, and we want to be able to filter them by:
+Use Typescript en el proyecto.
+App.js está escrito en una clase, pero se debe reescribir como un componente funcional y usar hooks.
+Reorganice los archivos y componentes del proyecto, de forma que usted considere óptima para trabajar.
+Necesitamos una página para detallar las cryptos, cree una página de detalle, de tal forma que desde el listado de criptos, en cada ítem veamos un botón “ver”, que me permita ir a dicha página de detalle, la página debe mostrar:
 
-1. Name
-2. Price
-3. Market Cap
-4. Circulating Supply (For example, Bitcoin Max supply is 21 Million Bitcoins, but the circulating supply is approx. 18 million)
+* Botón de regresar
+* Nombre de la crypto
+* Precio en USD
+Ya que tenemos una aplicación funcional y un poco más organizada, vamos a darle estilos. Siéntase libre de agregar el framework o librería css con el que se sienta más cómodo trabajando, también si lo prefiere, puede usar css puro. Ahora, dele un poco de amor a nuestra app y agregué márgenes y un estilo un poco más moderno y minimalista. Tenga en cuenta las siguientes consideraciones:
 
-## Requirements
+* Tipo de fuente: Montserrat
+* Tamaño de la fuente por defecto: 18px
+* Color de la fuente: #263238
+* Color de fondo del app: #ECEFF1
+* Color primario (barra superior): #01579B
+* Color secundario (botones de detalle): #FF9800
 
-As we said before, it can take you a couple of hours or a day.
-
-1. You can use [this api](https://min-api.cryptocompare.com/) or any other API (just try to complete the requirements)
-2. Use Typescript
-3. Use Hooks
-4. Refactor the code
-5. Format values (dates, prices, etc)
-6. Use TailwindCSS
-7. Testing suite
-8. Good use of git (commits, pull requests, branches)
-9. Use of [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) for commit messages
-
-## How to deliver
-
-1. Clone this repo and share the link with us at the time to deliver (DO NOT FORK)
-2. Deploy this repo (you can use Vercel)
-3. Please document the repo and your code (using [JSDoc](https://jsdoc.app/))
-4. On the README, explain your architecture, component design, and development choices.
-5. A summary of what else you could/would like to have done if you had more time.
-
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Ya que logramos maquillar un poco nuestra app, es hora de agregar una barra superior estilo toolbar nos muestre las cryptos con mayor y menor precio del listado.
+Agreguemos un poco más de valor. En la página de detalle de cada crypto, mostremos además los precios de dicha crypto en EUR, JPY, BTC y ETH
+Agreguemos una página de login, que sea la primera página vista al llegar al app, debe ser un formulario simple con usuario (un email válido) y contraseña (alfa numérico de no menos 8 caracteres y un carácter especial). Al ingresar cualquier email y contraseña que cumpla estos requisitos, debería poder acceder y ver el listado de cryptos.
+Agregue algunos test unitarios a los componentes creados que nos permita validar el funcionamiento adecuado.
