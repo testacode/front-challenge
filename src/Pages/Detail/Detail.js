@@ -43,7 +43,7 @@ const Detail = () => {
 
   return (
     <div className="Detail">
-      <Link to="/">back</Link>
+      <Link to="/">Regresar</Link>
       <table>
         <thead>
           <tr>
